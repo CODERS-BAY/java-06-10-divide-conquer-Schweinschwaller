@@ -6,11 +6,10 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-
         System.out.println("Divide and conquer");
 
         Random fortuna = new Random();
-        int arraySizeRandom = fortuna.nextInt(40) + 2; // +2 because random can also return 0
+        int arraySizeRandom = fortuna.nextInt(4000) + 2; // +2 because random can also return 0
         int[] arrayRandom = new int[arraySizeRandom];
         for (int i = 0; i < arrayRandom.length; i++) {
             if (fortuna.nextBoolean()) {
@@ -21,16 +20,15 @@ public class Main {
         }
 
         System.out.println(Arrays.toString(arrayRandom));
-
         int max = divide(arrayRandom);
-
+        System.out.println("Maximum is: " + max);
     }
 
     public static int divide(int[] inputArray) {
         if (inputArray.length == 1) {
-            return inputArray[1];
+            return inputArray[0];
         }
-
+        // split the array in two halfs
         int leftSize = inputArray.length / 2;
         int[] leftArray = new int[leftSize];
         for (int i = 0; i < leftSize; i++) {
