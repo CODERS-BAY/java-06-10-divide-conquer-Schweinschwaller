@@ -43,9 +43,11 @@ public class Main {
     }
 
     private static int findMax(int left, int right) {
-        if (left > right)
+        /*if (left > right)
             return left;
         else
-            return right;
+            return right;*/
+        // boolean statement ? true result : false result;
+        return left > right ? left : right;
     }
 }
